@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Punaro Brothers LLC — Websites for Local Businesses</title>
   <meta name="description" content="We build modern, professional websites for local businesses — fast. Restaurants, cafes, barbershops, and more.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,431 +15,396 @@
   <div class="nav-inner">
     <a href="#" class="nav-brand">
       <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="28" height="28" rx="7" fill="#2563eb"/>
-        <text x="5" y="20" font-family="Inter, sans-serif" font-weight="800" font-size="16" fill="white">P</text>
+        <rect width="28" height="28" fill="#3b82f6"/>
+        <text x="5" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="16" fill="white">P</text>
       </svg>
       Punaro Brothers
     </a>
     <div class="nav-links">
       <a href="#portfolio">Portfolio</a>
-      <a href="#pricing">Services</a>
+      <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact" class="btn btn-primary nav-cta">Get a Free Quote</a>
+      <a href="#contact" class="nav-cta">Get a Free Quote</a>
     </div>
   </div>
 </nav>
 
-<!-- ==================== HERO ==================== -->
+<!-- ==================== SECTION 01: HERO ==================== -->
 <section class="hero">
+  <!-- Rotating watermark -->
+  <div class="section__watermark"><span>WEB</span></div>
+  <!-- Background number -->
+  <div class="hero__bg-number">01</div>
+
   <div class="container">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-badge">
-          <svg viewBox="0 0 14 14" fill="currentColor"><circle cx="7" cy="7" r="4"/></svg>
-          Built by two brothers
-        </div>
-        <h1>Your business deserves a website that <span>actually looks legit.</span></h1>
-        <p class="hero-sub">We build clean, modern websites for local businesses — fast. No complicated process. No bloated agency pricing. Just a professional site that makes your business look credible online.</p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn btn-primary">Get a Free Quote
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-          <a href="#portfolio" class="btn btn-secondary">See Demo Sites</a>
-        </div>
-        <div class="hero-proof">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>
-          Fast turnaround
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>
-          Mobile-friendly
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>
-          No hassle
-        </div>
+    <!-- Intro text -->
+    <div class="hero__intro">Two Brothers</div>
+
+    <!-- Massive stacked words -->
+    <div class="hero__words">
+      <div class="hero__word">SIMPLE.</div>
+      <div class="hero__word">FAST.</div>
+      <div class="hero__word hero__word--accent">RELIABLE.</div>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="hero__subtitle">
+      We craft websites that <strong>load instantly</strong>,
+      look <strong>stunning</strong>, and
+      just <strong>work</strong> — for local businesses that deserve to look legit online.
+    </p>
+
+    <!-- Feature words with reveal -->
+    <div class="hero__features">
+      <div class="hero__feature" data-reveal-delay="0">
+        <div class="hero__feature-ghost">LIGHTNING</div>
+        <div class="hero__feature-reveal"><span>LIGHTNING</span></div>
       </div>
-      <div class="hero-visual">
-        <div class="browser-mockup">
-          <div class="browser-bar">
-            <div class="browser-dot red"></div>
-            <div class="browser-dot yellow"></div>
-            <div class="browser-dot green"></div>
-            <div class="browser-url">www.yourbusiness.com</div>
-          </div>
-          <div class="browser-body">
-            <div class="mock-nav"><span>About</span><span>Menu</span><span>Contact</span></div>
-            <div class="mock-logo">YOUR BUSINESS</div>
-            <div class="mock-tagline">A professional website, built for you</div>
-            <div class="mock-cards">
-              <div class="mock-card"></div>
-              <div class="mock-card"></div>
-              <div class="mock-card"></div>
-            </div>
-          </div>
-        </div>
-        <div class="phone-float">
-          <div class="phone-notch"></div>
-          <div class="phone-body">
-            <div class="p-logo">YOUR BUSINESS</div>
-            <div class="p-lines">
-              <div class="p-line" style="width:48px;"></div>
-              <div class="p-line" style="width:36px;"></div>
-              <div class="p-line" style="width:42px;"></div>
-            </div>
-          </div>
-        </div>
+      <div class="hero__feature" data-reveal-delay="200">
+        <div class="hero__feature-ghost">ROCK SOLID</div>
+        <div class="hero__feature-reveal"><span>ROCK SOLID</span></div>
+      </div>
+      <div class="hero__feature" data-reveal-delay="400">
+        <div class="hero__feature-ghost">BEAUTIFUL</div>
+        <div class="hero__feature-reveal"><span>BEAUTIFUL</span></div>
+      </div>
+    </div>
+
+    <!-- CTA buttons -->
+    <div class="hero__buttons">
+      <a href="#contact" class="btn btn-primary">
+        Start Project
+        <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="#portfolio" class="btn btn-outline">View Work</a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero__scroll">SCROLL</div>
+</section>
+
+<!-- ==================== SECTION 02: THE PROBLEM ==================== -->
+<section class="section section--light" id="problem">
+  <div class="section__watermark"><span>BROTHERS</span></div>
+  <div class="section__bg-number">02</div>
+
+  <div class="container">
+    <div class="section__number animate-on-scroll">02</div>
+
+    <h2 class="section__heading animate-on-scroll">
+      THE<br><span class="accent">PROBLEM</span>
+    </h2>
+
+    <p class="problem__intro animate-on-scroll">
+      Most people search online before they visit a business. If you don't look good online,
+      you're <strong>losing them</strong> before they ever walk in.
+    </p>
+
+    <div class="problem__grid">
+      <div class="problem__item animate-on-scroll delay-100">
+        <div class="problem__item-title">No Website</div>
+        <p class="problem__item-desc">People can't find you. They go to the competitor with a website instead.</p>
+        <div class="problem__item-line animate-line"></div>
+      </div>
+      <div class="problem__item animate-on-scroll delay-200">
+        <div class="problem__item-title">Outdated Site</div>
+        <p class="problem__item-desc">An old, clunky website makes your business look unprofessional and untrustworthy.</p>
+        <div class="problem__item-line animate-line"></div>
+      </div>
+      <div class="problem__item animate-on-scroll delay-300">
+        <div class="problem__item-title">Not Mobile</div>
+        <p class="problem__item-desc">Over 60% of searches are on phones. A site that doesn't work on mobile is losing you customers daily.</p>
+        <div class="problem__item-line animate-line"></div>
+      </div>
+      <div class="problem__item animate-on-scroll delay-400">
+        <div class="problem__item-title">No Presence</div>
+        <p class="problem__item-desc">No way for customers to see your hours, menu, services, or contact info at a glance.</p>
+        <div class="problem__item-line animate-line"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== PAIN / PROBLEM ==================== -->
-<section class="pain">
-  <div class="container">
-    <div class="pain-header">
-      <div class="section-eyebrow">The Problem</div>
-      <h2 class="section-heading">No website means missed customers</h2>
-      <p class="section-sub">Most people search online before they visit a business. If you don't look good online, you're losing them before they ever walk in.</p>
-    </div>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l2.5 1.5"/></svg>
-        </div>
-        <h3>No Website</h3>
-        <p>People can't find you. They go to the competitor with a website instead.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M3 8h14"/><path d="M8 3v14"/></svg>
-        </div>
-        <h3>Outdated Website</h3>
-        <p>An old, clunky website makes your business look unprofessional and untrustworthy.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="2" width="10" height="16" rx="2"/><circle cx="10" cy="15" r="1"/></svg>
-        </div>
-        <h3>Not Mobile-Friendly</h3>
-        <p>Over 60% of searches are on phones. A site that doesn't work on mobile is losing you customers daily.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 2v16M6 6l-4 4 4 4M14 6l4 4-4 4"/></svg>
-        </div>
-        <h3>No Online Presence</h3>
-        <p>No way for customers to see your hours, menu, services, or contact info at a glance.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ==================== SECTION 03: HOW IT WORKS ==================== -->
+<section class="section section--dark" id="process">
+  <div class="process__marquee"><span>HOW IT WORKS &middot; HOW IT WORKS &middot; HOW IT WORKS &middot; HOW IT WORKS &middot;&nbsp;</span></div>
+  <div class="section__bg-number">03</div>
 
-<!-- ==================== HOW IT WORKS ==================== -->
-<section class="process">
   <div class="container">
-    <div class="process-header">
-      <div class="section-eyebrow">How It Works</div>
-      <h2 class="section-heading">Three steps to looking legit online</h2>
-      <p class="section-sub">No complicated process. No jargon. Just a fast, clean way to get your business online.</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Tell Us About Your Business</h3>
-        <p>Fill out a quick form or hop on a short call. We learn what you need and what makes your business great.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>We Build It Fast</h3>
-        <p>We design and build your site with a clean, modern layout. You review it and we polish it until it's perfect.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Go Live &amp; Get Customers</h3>
-        <p>Your professional website goes live. Customers find you, trust you, and reach out — that's the whole point.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="section__number animate-on-scroll">03</div>
 
-<!-- ==================== PORTFOLIO ==================== -->
-<section class="portfolio" id="portfolio">
-  <div class="container">
-    <div class="portfolio-header">
-      <div class="section-eyebrow">Our Work</div>
-      <h2 class="section-heading">See what we can build for you</h2>
-      <p class="section-sub">Here's a preview of demo sites we've built. Picture your business looking this polished.</p>
-    </div>
-    <div class="portfolio-grid">
+    <h2 class="section__heading animate-on-scroll">
+      HOW IT<br><span class="accent">WORKS</span>
+    </h2>
 
-      <!-- Tea Shop Demo -->
-      <div class="portfolio-card">
-        <div class="portfolio-thumb">
-          <div class="portfolio-thumb-inner thumb-tea">
-            <div class="thumb-nav"><span>Menu</span><span>Visit</span></div>
-            <div class="thumb-logo">JADE LEAF TEA HOUSE</div>
-            <div class="thumb-tag">Steeped in Tradition</div>
-            <div class="thumb-cards"><div></div><div></div><div></div></div>
+    <div class="process__steps">
+      <div class="process__step animate-on-scroll delay-100">
+        <div class="process__step-inner">
+          <div class="process__step-number">01</div>
+          <div class="process__step-content">
+            <h3 class="process__step-title">Tell Us About Your Business</h3>
+            <p class="process__step-desc">Fill out a quick form or hop on a short call. We learn what you need and what makes your business great.</p>
           </div>
         </div>
-        <div class="portfolio-info">
-          <div class="portfolio-tag">Tea Shop / Cafe</div>
-          <h3>Jade Leaf Tea House</h3>
-          <p>A calming, elegant site for a premium tea shop — full menu, location info, and a feel that matches the brand.</p>
-          <a href="demos/jade-leaf-tea-house/index.html" class="portfolio-link" target="_blank">
-            View Demo
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
       </div>
-
-      <!-- Barbershop Demo -->
-      <div class="portfolio-card">
-        <div class="portfolio-thumb">
-          <div class="portfolio-thumb-inner thumb-barber">
-            <div class="thumb-nav"><span>Services</span><span>Visit</span></div>
-            <div class="thumb-logo" style="font-family:'Bebas Neue',sans-serif; letter-spacing:4px;">RAZOR & CO.</div>
-            <div class="thumb-tag" style="color:rgba(200,164,94,0.6);">Precision Cuts. Clean Fades.</div>
-            <div class="thumb-cards"><div></div><div></div><div></div></div>
+      <div class="process__step animate-on-scroll delay-200">
+        <div class="process__step-inner">
+          <div class="process__step-number">02</div>
+          <div class="process__step-content">
+            <h3 class="process__step-title">We Build It Fast</h3>
+            <p class="process__step-desc">We design and build your site with a clean, modern layout. You review it and we polish it until it's perfect.</p>
           </div>
         </div>
-        <div class="portfolio-info">
-          <div class="portfolio-tag">Barbershop</div>
-          <h3>Razor & Co. Barbershop</h3>
-          <p>A bold, dark-themed site for a modern barbershop — services, pricing, booking, and walk-in info.</p>
-          <a href="demos/barber-demo/index.html" class="portfolio-link" target="_blank">
-            View Demo
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
+      </div>
+      <div class="process__step animate-on-scroll delay-300">
+        <div class="process__step-inner">
+          <div class="process__step-number">03</div>
+          <div class="process__step-content">
+            <h3 class="process__step-title">Go Live &amp; Get Customers</h3>
+            <p class="process__step-desc">Your professional website goes live. Customers find you, trust you, and reach out — that's the whole point.</p>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Bottom statement -->
+    <div class="animate-on-scroll" style="margin-top: 8rem;">
+      <div style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1; text-transform: uppercase;">
+        <span style="color: var(--accent);">100%</span><br>
+        SATISFACTION<br>
+        GUARANTEED
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 04: OUR WORK ==================== -->
+<section class="section section--light" id="portfolio">
+  <div class="section__watermark"><span>PROJECTS</span></div>
+  <div class="section__bg-number">04</div>
+
+  <div class="container">
+    <div class="section__number animate-on-scroll">04</div>
+
+    <h2 class="section__heading animate-on-scroll">
+      OUR<br><span class="accent">WORK</span>
+    </h2>
+
+    <div class="portfolio__projects">
+
+      <!-- Jade Leaf Tea House -->
+      <div class="portfolio__project animate-on-scroll">
+        <div class="portfolio__project-number">01</div>
+        <div class="portfolio__project-title">JADE LEAF TEA HOUSE</div>
+        <div class="portfolio__project-category">Tea Shop / Cafe</div>
+        <p class="portfolio__project-desc">A calming, elegant site for a premium tea shop — full menu, location info, and a feel that matches the brand.</p>
+        <div class="portfolio__project-stats">
+          <div>
+            <div class="portfolio__stat-value">0.8s</div>
+            <div class="portfolio__stat-label">LOAD</div>
+          </div>
+          <div>
+            <div class="portfolio__stat-value">Mobile</div>
+            <div class="portfolio__stat-label">OPTIMIZED</div>
+          </div>
+          <div>
+            <div class="portfolio__stat-value">SEO</div>
+            <div class="portfolio__stat-label">READY</div>
+          </div>
+        </div>
+        <a href="demos/jade-leaf-tea-house/index.html" class="portfolio__project-link" target="_blank">
+          View Demo
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <div class="portfolio__project-line animate-line"></div>
+      </div>
+
+      <!-- Razor & Co. Barbershop -->
+      <div class="portfolio__project animate-on-scroll">
+        <div class="portfolio__project-number">02</div>
+        <div class="portfolio__project-title">RAZOR &amp; CO.</div>
+        <div class="portfolio__project-category">Barbershop</div>
+        <p class="portfolio__project-desc">A bold, dark-themed site for a modern barbershop — services, pricing, booking, and walk-in info.</p>
+        <div class="portfolio__project-stats">
+          <div>
+            <div class="portfolio__stat-value">1.0s</div>
+            <div class="portfolio__stat-label">LOAD</div>
+          </div>
+          <div>
+            <div class="portfolio__stat-value">Mobile</div>
+            <div class="portfolio__stat-label">OPTIMIZED</div>
+          </div>
+          <div>
+            <div class="portfolio__stat-value">SEO</div>
+            <div class="portfolio__stat-label">READY</div>
+          </div>
+        </div>
+        <a href="demos/barber-demo/index.html" class="portfolio__project-link" target="_blank">
+          View Demo
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <div class="portfolio__project-line animate-line"></div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ==================== PRICING ==================== -->
-<section class="pricing" id="pricing">
+<!-- ==================== SECTION 05: PRICING ==================== -->
+<section class="section section--dark" id="pricing">
+  <div class="section__bg-number">05</div>
+
   <div class="container">
-    <div class="pricing-header">
-      <div class="section-eyebrow">Simple Pricing</div>
-      <h2 class="section-heading">Packages that make sense for your business</h2>
-      <p class="section-sub">No hidden fees. No confusing tiers. Pick what fits and let's get you online.</p>
-    </div>
-    <div class="pricing-grid">
+    <div class="section__number animate-on-scroll">05</div>
+
+    <h2 class="section__heading animate-on-scroll">
+      SIMPLE<br><span class="accent">PRICING</span>
+    </h2>
+
+    <div class="pricing__tiers">
 
       <!-- Starter -->
-      <div class="pricing-card">
-        <h3>Starter Site</h3>
-        <p class="pricing-desc">For businesses with no website that need to get online fast.</p>
-        <div class="pricing-price">$250 <span>setup</span></div>
-        <div class="pricing-note">+ optional $49/mo management</div>
-        <ul class="pricing-features">
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Single-page website
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Mobile-friendly design
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Contact form
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Google Maps integration
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Launch support
-          </li>
+      <div class="pricing__tier animate-on-scroll delay-100">
+        <div class="pricing__tier-header">
+          <div class="pricing__tier-number">01</div>
+          <div class="pricing__tier-info">
+            <div class="pricing__tier-name">Starter Site</div>
+            <div class="pricing__tier-desc">For businesses with no website that need to get online fast.</div>
+          </div>
+          <div class="pricing__tier-price">$250 <span>setup</span></div>
+        </div>
+        <div class="pricing__tier-note">+ optional $49/mo management</div>
+        <ul class="pricing__tier-features">
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Single-page website</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Mobile-friendly</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Contact form</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Google Maps</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Launch support</li>
         </ul>
-        <a href="#contact" class="btn btn-secondary" style="width:100%;justify-content:center;">Get Started</a>
+        <div class="pricing__tier-cta">
+          <a href="#contact" class="btn btn-outline btn--sm">Get Started</a>
+        </div>
       </div>
 
       <!-- Growth (featured) -->
-      <div class="pricing-card featured">
-        <h3>Growth Site</h3>
-        <p class="pricing-desc">For businesses that want more pages, better design, and more leads.</p>
-        <div class="pricing-price">$500 <span>setup</span></div>
-        <div class="pricing-note">+ optional $79/mo management</div>
-        <ul class="pricing-features">
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Up to 5 pages
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Custom design &amp; branding
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Menu / service pages
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Booking / contact CTA
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            SEO basics &amp; fast loading
-          </li>
+      <div class="pricing__tier pricing__tier--featured animate-on-scroll delay-200">
+        <div class="pricing__tier-header">
+          <div class="pricing__tier-number">02</div>
+          <div class="pricing__tier-info">
+            <div class="pricing__tier-name">Growth Site</div>
+            <div class="pricing__tier-desc">For businesses that want more pages, better design, and more leads.</div>
+          </div>
+          <div class="pricing__tier-price">$500 <span>setup</span></div>
+        </div>
+        <div class="pricing__tier-note">+ optional $79/mo management</div>
+        <ul class="pricing__tier-features">
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Up to 5 pages</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Custom design &amp; branding</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Menu / service pages</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Booking / contact CTA</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> SEO basics &amp; fast loading</li>
         </ul>
-        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started</a>
+        <div class="pricing__tier-cta">
+          <a href="#contact" class="btn btn-primary btn--sm">Get Started</a>
+        </div>
       </div>
 
       <!-- Custom -->
-      <div class="pricing-card">
-        <h3>Custom Site</h3>
-        <p class="pricing-desc">For businesses with specific needs or more advanced features.</p>
-        <div class="pricing-price">Custom</div>
-        <div class="pricing-note">Let's talk about what you need</div>
-        <ul class="pricing-features">
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Unlimited pages
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Online ordering / booking
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            E-commerce ready
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Advanced integrations
-          </li>
-          <li>
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>
-            Priority support
-          </li>
+      <div class="pricing__tier animate-on-scroll delay-300">
+        <div class="pricing__tier-header">
+          <div class="pricing__tier-number">03</div>
+          <div class="pricing__tier-info">
+            <div class="pricing__tier-name">Custom Site</div>
+            <div class="pricing__tier-desc">For businesses with specific needs or more advanced features.</div>
+          </div>
+          <div class="pricing__tier-price">Custom</div>
+        </div>
+        <div class="pricing__tier-note">Let's talk about what you need</div>
+        <ul class="pricing__tier-features">
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Unlimited pages</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Online ordering / booking</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> E-commerce ready</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Advanced integrations</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg> Priority support</li>
         </ul>
-        <a href="#contact" class="btn btn-secondary" style="width:100%;justify-content:center;">Contact Us</a>
+        <div class="pricing__tier-cta">
+          <a href="#contact" class="btn btn-outline btn--sm">Contact Us</a>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ==================== WHY CHOOSE US ==================== -->
-<section class="why">
-  <div class="container">
-    <div class="why-header">
-      <div class="section-eyebrow">Why Punaro Brothers</div>
-      <h2 class="section-heading">Built for small business owners, by people who get it</h2>
-      <p class="section-sub">We're not a giant agency. We're two brothers who help local businesses look great online — quickly and affordably.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-card-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 2l2.5 5 5.5.8-4 3.9 1 5.5L10 14.7l-5 2.5 1-5.5-4-3.9 5.5-.8z"/></svg>
-        </div>
-        <h3>Fast Turnaround</h3>
-        <p>Most sites are ready in days, not weeks. We move fast because your business shouldn't have to wait.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-card-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="16" height="12" rx="2"/><path d="M2 7h16"/><path d="M6 15v2M14 15v2"/></svg>
-        </div>
-        <h3>Clean, Modern Design</h3>
-        <p>No outdated templates. Every site is designed to look polished, professional, and trustworthy.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-card-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="2" width="10" height="16" rx="2"/><circle cx="10" cy="15" r="1"/></svg>
-        </div>
-        <h3>Mobile-First</h3>
-        <p>Every site looks and works perfectly on phones and tablets — where most of your customers are searching.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-card-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M17 10c0 3.866-3.134 7-7 7s-7-3.134-7-7 3.134-7 7-7"/><path d="M14 3l3 3-3 3"/></svg>
-        </div>
-        <h3>Simple Process</h3>
-        <p>No jargon, no meetings that should have been emails. Tell us what you need, we build it. Done.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-card-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 2v6l4 2"/><circle cx="10" cy="10" r="8"/></svg>
-        </div>
-        <h3>Done-For-You Setup</h3>
-        <p>Domain, hosting, email — we handle the technical stuff so you can focus on running your business.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-card-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M16 10c0 3.314-2.686 6-6 6s-6-2.686-6-6 2.686-6 6-6"/><path d="M10 4V2M10 18v-2M4 10H2M18 10h-2"/></svg>
-        </div>
-        <h3>Ongoing Support</h3>
-        <p>Need updates or changes? Our monthly plans keep your site fresh, secure, and working perfectly.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ==================== SECTION 06: FAQ ==================== -->
+<section class="section section--light" id="faq">
+  <div class="section__watermark"><span>FAQ</span></div>
+  <div class="section__bg-number">06</div>
 
-<!-- ==================== FAQ ==================== -->
-<section class="faq" id="faq">
   <div class="container">
-    <div class="faq-header">
-      <div class="section-eyebrow">FAQ</div>
-      <h2 class="section-heading">Questions? We've got answers.</h2>
-    </div>
-    <div class="faq-list">
+    <div class="section__number animate-on-scroll">06</div>
 
-      <div class="faq-item open">
+    <h2 class="section__heading animate-on-scroll">
+      COMMON<br><span class="accent">QUESTIONS</span>
+    </h2>
+
+    <div class="faq__list">
+
+      <div class="faq-item active animate-on-scroll delay-100">
         <button class="faq-question">
           How long does it take to get my website?
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 4v12M4 10h12"/></svg>
+          <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Most starter sites are ready within 3–5 business days. Growth sites typically take 1–2 weeks depending on the scope. We'll give you a clear timeline upfront.</p>
+          <p>Most starter sites are ready within 3-5 business days. Growth sites typically take 1-2 weeks depending on the scope. We'll give you a clear timeline upfront.</p>
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item animate-on-scroll delay-200">
         <button class="faq-question">
           Do I need to provide all the content?
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 4v12M4 10h12"/></svg>
+          <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
           <p>Not necessarily. We'll guide you through what we need. If you have photos, menus, or service info, great — send it over. If not, we can help with placeholder content and get you started.</p>
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item animate-on-scroll delay-200">
         <button class="faq-question">
           Can you redesign my current website?
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 4v12M4 10h12"/></svg>
+          <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
           <p>Absolutely. If you already have a website that's outdated or not working well, we can give it a complete refresh with a modern, clean design.</p>
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item animate-on-scroll delay-300">
         <button class="faq-question">
           Do you help with domain and hosting?
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 4v12M4 10h12"/></svg>
+          <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
           <p>Yes — we handle domain registration, hosting setup, and all the technical details. You don't have to worry about any of that.</p>
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item animate-on-scroll delay-300">
         <button class="faq-question">
           Can I update the website later?
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 4v12M4 10h12"/></svg>
+          <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
           <p>Of course. With our monthly management plan, we handle updates for you. Or, if you prefer, we can set your site up so you can make simple changes yourself.</p>
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item animate-on-scroll delay-400">
         <button class="faq-question">
           Do you offer ongoing support?
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 4v12M4 10h12"/></svg>
+          <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
           <p>Yes. Our optional monthly plans include site updates, security, backups, and priority support. You're never stuck figuring things out alone.</p>
@@ -450,19 +415,65 @@
   </div>
 </section>
 
-<!-- ==================== FINAL CTA ==================== -->
-<section class="final-cta" id="contact">
+<!-- ==================== SECTION 07: CONTACT ==================== -->
+<section class="section section--dark" id="contact">
+  <!-- Rotating watermark -->
+  <div class="section__watermark" style="opacity: 0.05;">
+    <span style="animation: rotate-slow 100s linear infinite;">CONTACT</span>
+  </div>
+  <div class="section__bg-number">07</div>
+
   <div class="container">
-    <div class="final-cta-inner">
-      <div class="section-eyebrow">Ready?</div>
-      <h2>Let's get your business online.</h2>
-      <p>Tell us a little about your business and we'll put together a free quote. No pressure, no strings attached — just a conversation about what you need.</p>
-      <div class="final-cta-buttons">
-        <a href="mailto:contact@punarobrothers.com" class="btn btn-primary">
-          Get a Free Quote
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
-        <a href="#" class="btn btn-secondary">Book a Quick Call</a>
+    <div class="section__number animate-on-scroll">07</div>
+
+    <h2 class="section__heading animate-on-scroll">
+      LET'S BUILD<br>
+      <span class="accent">SOMETHING</span><br>
+      AMAZING
+    </h2>
+
+    <div class="contact__grid">
+      <!-- Form -->
+      <div class="animate-on-scroll animate-on-scroll--left">
+        <form class="contact__form" id="contact-form">
+          <div>
+            <label class="contact__label" for="name">Name</label>
+            <input class="contact__input" type="text" id="name" placeholder="Your name" required>
+          </div>
+          <div>
+            <label class="contact__label" for="email">Email</label>
+            <input class="contact__input" type="email" id="email" placeholder="your@email.com" required>
+          </div>
+          <div>
+            <label class="contact__label" for="message">Message</label>
+            <textarea class="contact__textarea" id="message" rows="5" placeholder="Tell us about your business..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary contact__submit">
+            Send Message
+            <svg width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- Info -->
+      <div class="contact__info animate-on-scroll animate-on-scroll--right">
+        <div>
+          <div class="contact__info-label">Email</div>
+          <div class="contact__info-value">
+            <a href="mailto:contact@punarobrothers.com">CONTACT@<br>PUNAROBROTHERS.COM</a>
+          </div>
+        </div>
+        <div>
+          <div class="contact__info-label">Response Time</div>
+          <div class="contact__info-value">&lt; 24<br>HOURS</div>
+        </div>
+        <div class="contact__testimonial">
+          <p class="contact__testimonial-quote">"Working with the Punaro Brothers was the best decision we made for our online presence."</p>
+          <div>
+            <p class="contact__testimonial-author">Happy Client</p>
+            <p class="contact__testimonial-role">Local Business Owner</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -470,13 +481,46 @@
 
 <!-- ==================== FOOTER ==================== -->
 <footer>
-  <div class="footer-brand">Punaro Brothers LLC</div>
-  <div class="footer-copy">&copy; 2026 Punaro Brothers LLC. All rights reserved.</div>
-  <div class="footer-links">
-    <a href="#portfolio">Portfolio</a>
-    <a href="#pricing">Services</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
+  <div class="footer__watermark"><span>PUNARO BROTHERS</span></div>
+
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <!-- Brand -->
+      <div>
+        <div class="footer__brand-name">PUNARO<br>BROTHERS</div>
+        <p class="footer__brand-tagline">Building websites that make a difference.</p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h4 class="footer__col-title">Navigate</h4>
+        <ul class="footer__links">
+          <li><a href="#portfolio">Our Work</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="footer__col-title">Reach Out</h4>
+        <a href="mailto:contact@punarobrothers.com" class="footer__contact-email">contact@punarobrothers.com</a>
+        <p class="footer__contact-response">Response: &lt; 24 hours</p>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2026 Punaro Brothers LLC</p>
+      <div class="footer__made">
+        <span>Made with</span>
+        <span class="footer__heart">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </span>
+        <span>by Two Brothers</span>
+      </div>
+    </div>
   </div>
 </footer>
 
