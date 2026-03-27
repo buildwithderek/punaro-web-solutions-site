@@ -532,8 +532,9 @@ body.loaded .hero__buttons { opacity: 1; transform: translateY(0); transition-de
 .bio__card-img {
   width: clamp(96px, 9vw, 132px);
   height: clamp(96px, 9vw, 132px);
-  border-radius: 8px;
+  border-radius: 0;
   object-fit: cover;
+  object-position:center top;;
   flex-shrink: 0;
 }
 .bio__card-name {
