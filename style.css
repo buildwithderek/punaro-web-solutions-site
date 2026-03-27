@@ -522,6 +522,19 @@ body.loaded .hero__buttons { opacity: 1; transform: translateY(0); transition-de
 .bio__card:hover .bio__card-name {
   color: var(--accent);
 }
+.bio__card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bio__card-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .bio__card-name {
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 900;
