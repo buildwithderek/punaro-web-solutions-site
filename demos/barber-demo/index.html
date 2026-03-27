@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Razor & Co. Barbershop</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #0a0a0a;
+    --charcoal: #1a1a1a;
+    --dark-gray: #2a2a2a;
+    --mid-gray: #888;
+    --light: #f2f0ed;
+    --cream: #e8e4de;
+    --gold: #c8a45e;
+    --gold-dim: rgba(200,164,94,0.6);
+    --red: #8b2020;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--light);
+    background: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 48px;
+    height: 64px;
+    background: var(--black);
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: var(--light);
+    letter-spacing: 4px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo svg { width: 26px; height: 26px; }
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: var(--black);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.95) 100%),
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%230a0a0a" width="1200" height="800"/><line x1="0" y1="0" x2="1200" y2="800" stroke="%23222" stroke-width="0.5" opacity="0.3"/><line x1="1200" y1="0" x2="0" y2="800" stroke="%23222" stroke-width="0.5" opacity="0.3"/><line x1="600" y1="0" x2="600" y2="800" stroke="%23222" stroke-width="0.5" opacity="0.15"/><line x1="0" y1="400" x2="1200" y2="400" stroke="%23222" stroke-width="0.5" opacity="0.15"/><rect x="350" y="200" width="500" height="400" rx="0" fill="none" stroke="%23c8a45e" stroke-width="0.5" opacity="0.08"/><rect x="380" y="230" width="440" height="340" rx="0" fill="none" stroke="%23c8a45e" stroke-width="0.5" opacity="0.05"/></svg>');
+    background-size: cover;
+  }
+  /* Barber pole stripes */
+  .hero::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: repeating-linear-gradient(
+      180deg,
+      var(--red) 0px, var(--red) 20px,
+      white 20px, white 40px,
+      #2563eb 40px, #2563eb 60px
+    );
+    z-index: 2;
+    opacity: 0.5;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: repeating-linear-gradient(
+      180deg,
+      var(--red) 0px, var(--red) 20px,
+      white 20px, white 40px,
+      #2563eb 40px, #2563eb 60px
+    );
+    z-index: 2;
+    opacity: 0.5;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 700px;
+    padding: 0 24px;
+  }
+  .hero-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 28px;
+  }
+  .hero-overline {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    color: var(--light);
+    line-height: 0.95;
+    margin-bottom: 20px;
+    letter-spacing: 6px;
+  }
+  .hero p {
+    font-size: 1rem;
+    color: var(--mid-gray);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+  .hero-btn {
+    display: inline-block;
+    padding: 16px 48px;
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .hero-btn:hover {
+    background: #d4b06a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(200,164,94,0.3);
+  }
+
+  /* SERVICES - Section 2 */
+  .services {
+    padding: 100px 48px;
+    background: var(--charcoal);
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    color: var(--light);
+    letter-spacing: 4px;
+    margin-bottom: 60px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .service-card {
+    padding: 40px 32px;
+    background: var(--dark-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: background 0.3s;
+    position: relative;
+  }
+  .service-card:hover {
+    background: #333;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 32px; right: 32px;
+    height: 1px;
+    background: rgba(200,164,94,0.1);
+  }
+  .service-left { flex: 1; }
+  .service-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--light);
+    margin-bottom: 8px;
+  }
+  .service-card p {
+    font-size: 0.85rem;
+    color: var(--mid-gray);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  .service-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    margin-left: 24px;
+  }
+
+  /* VISIT - Section 3 */
+  .visit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 480px;
+  }
+  .visit-left {
+    position: relative;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .visit-left-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><rect fill="%230a0a0a" width="600" height="600"/><rect x="40" y="40" width="520" height="520" fill="none" stroke="%23c8a45e" stroke-width="0.5" opacity="0.12"/><rect x="60" y="60" width="480" height="480" fill="none" stroke="%23c8a45e" stroke-width="0.5" opacity="0.08"/><line x1="300" y1="40" x2="300" y2="560" stroke="%23222" stroke-width="0.5" opacity="0.2"/><line x1="40" y1="300" x2="560" y2="300" stroke="%23222" stroke-width="0.5" opacity="0.2"/></svg>');
+    background-size: cover;
+  }
+  .visit-left-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  .visit-left-content svg { width: 80px; height: 80px; margin-bottom: 20px; }
+  .visit-left-content p {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    color: var(--gold-dim);
+  }
+  .visit-right {
+    padding: 60px 56px;
+    background: var(--charcoal);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .visit-right .section-label { text-align: left; margin-bottom: 12px; }
+  .visit-right h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    letter-spacing: 3px;
+    color: var(--light);
+    margin-bottom: 32px;
+  }
+  .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .info-row svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+  .info-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .info-value {
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: rgba(242,240,237,0.7);
+    line-height: 1.6;
+  }
+  .book-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 36px;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    align-self: flex-start;
+  }
+  .book-btn:hover {
+    background: var(--gold);
+    color: var(--black);
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 28px 48px;
+    background: var(--black);
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 2px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 0.7rem; }
+    .services { padding: 60px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .visit { grid-template-columns: 1fr; }
+    .visit-left { min-height: 220px; }
+    .visit-right { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="3" width="3" height="20" rx="1.5" fill="var(--gold)" opacity="0.8"/>
+      <rect x="11.5" y="3" width="3" height="20" rx="1.5" fill="var(--gold)" opacity="0.6"/>
+      <rect x="17" y="3" width="3" height="20" rx="1.5" fill="var(--gold)" opacity="0.4"/>
+    </svg>
+    RAZOR & CO.
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#visit">Visit</a>
+  </div>
+</nav>
+
+<!-- SECTION 1: HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <svg class="hero-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 8v48" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <path d="M32 8v48" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+      <path d="M44 8v48" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <path d="M14 20h36" stroke="var(--gold)" stroke-width="1" stroke-linecap="round" opacity="0.2"/>
+      <path d="M14 32h36" stroke="var(--gold)" stroke-width="1" stroke-linecap="round" opacity="0.2"/>
+      <path d="M14 44h36" stroke="var(--gold)" stroke-width="1" stroke-linecap="round" opacity="0.2"/>
+    </svg>
+    <div class="hero-overline">Est. 2019</div>
+    <h1>RAZOR & CO.</h1>
+    <p>Precision cuts. Clean fades. Old-school service.</p>
+    <a href="#services" class="hero-btn">View Services</a>
+  </div>
+</section>
+
+<!-- SECTION 2: SERVICES -->
+<section class="services" id="services">
+  <div class="section-label">What We Do</div>
+  <div class="section-title">OUR SERVICES</div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-left">
+        <h3>CLASSIC HAIRCUT</h3>
+        <p>Consultation, shampoo, precision cut, and style. Includes hot towel finish.</p>
+      </div>
+      <div class="service-price">$35</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-left">
+        <h3>SKIN FADE</h3>
+        <p>Seamless fade from skin to your desired length. Sharp and clean.</p>
+      </div>
+      <div class="service-price">$40</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-left">
+        <h3>BEARD TRIM</h3>
+        <p>Shape, line-up, and condition. Hot towel and beard oil included.</p>
+      </div>
+      <div class="service-price">$20</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-left">
+        <h3>HOT TOWEL SHAVE</h3>
+        <p>Traditional straight razor shave with pre-shave oil, hot lather, and aftershave balm.</p>
+      </div>
+      <div class="service-price">$30</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-left">
+        <h3>CUT + BEARD COMBO</h3>
+        <p>Full haircut with beard trim and lineup. The complete package.</p>
+      </div>
+      <div class="service-price">$50</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-left">
+        <h3>KIDS CUT</h3>
+        <p>For the young gentlemen. Ages 12 and under. Patient and precise.</p>
+      </div>
+      <div class="service-price">$25</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 3: VISIT / LOCATION -->
+<section class="visit" id="visit">
+  <div class="visit-left">
+    <div class="visit-left-bg"></div>
+    <div class="visit-left-content">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Scissors icon -->
+        <circle cx="26" cy="58" r="10" stroke="var(--gold)" stroke-width="1.5" opacity="0.5"/>
+        <circle cx="54" cy="58" r="10" stroke="var(--gold)" stroke-width="1.5" opacity="0.5"/>
+        <line x1="30" y1="50" x2="50" y2="30" stroke="var(--gold)" stroke-width="1.5" opacity="0.6"/>
+        <line x1="50" y1="50" x2="30" y2="30" stroke="var(--gold)" stroke-width="1.5" opacity="0.6"/>
+      </svg>
+      <p>WALK-INS WELCOME</p>
+    </div>
+  </div>
+  <div class="visit-right">
+    <div class="section-label">Find Us</div>
+    <h2>COME THROUGH</h2>
+
+    <div class="info-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      <div>
+        <div class="info-label">Address</div>
+        <div class="info-value">1205 Main Street<br>Austin, TX 78701</div>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 6v6l4 2"/>
+      </svg>
+      <div>
+        <div class="info-label">Hours</div>
+        <div class="info-value">Tue — Fri: 9am – 7pm<br>Saturday: 8am – 5pm<br>Sun & Mon: Closed</div>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      <div>
+        <div class="info-label">Contact</div>
+        <div class="info-value">(512) 555-0198<br>book@razorandco.com</div>
+      </div>
+    </div>
+
+    <a href="#" class="book-btn">Book an Appointment</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 RAZOR & CO. BARBERSHOP — ALL RIGHTS RESERVED
+</footer>
+
+</body>
+</html>
