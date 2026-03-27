@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jade Leaf Tea House</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --green-dark: #2d4a3e;
+    --green-mid: #4a7c6a;
+    --green-light: #8fb5a3;
+    --cream: #f5f0e8;
+    --cream-dark: #e8e0d0;
+    --text-dark: #1a1a1a;
+    --text-light: #f5f0e8;
+    --gold: #c9a96e;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 48px;
+    height: 64px;
+    background: var(--green-dark);
+    z-index: 100;
+    transition: background 0.3s;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo svg { width: 28px; height: 28px; }
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  /* HERO - Section 1 */
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: var(--green-dark);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(45,74,62,0.92) 0%, rgba(45,74,62,0.6) 50%, rgba(45,74,62,0.85) 100%),
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="a" cx="50%25" cy="40%25" r="60%25"><stop offset="0%25" stop-color="%234a7c6a" stop-opacity="0.4"/><stop offset="100%25" stop-color="%232d4a3e" stop-opacity="0"/></radialGradient></defs><rect fill="%232d4a3e" width="1200" height="800"/><circle cx="300" cy="250" r="180" fill="%233d6555" opacity="0.3"/><circle cx="850" cy="400" r="220" fill="%233d6555" opacity="0.2"/><circle cx="600" cy="600" r="150" fill="%234a7c6a" opacity="0.15"/><rect x="0" y="0" width="1200" height="800" fill="url(%23a)"/></svg>');
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 0 24px;
+  }
+  .hero-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 32px;
+    opacity: 0.9;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--text-light);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: rgba(245,240,232,0.75);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+  .hero-btn {
+    display: inline-block;
+    padding: 14px 44px;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .hero-btn:hover {
+    background: var(--gold);
+    color: var(--green-dark);
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+  }
+  .scroll-hint svg { width: 24px; height: 24px; opacity: 0.5; }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* MENU - Section 2 */
+  .menu-section {
+    padding: 100px 48px;
+    background: var(--cream);
+  }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    text-align: center;
+    color: var(--text-dark);
+    margin-bottom: 60px;
+  }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .menu-card {
+    text-align: center;
+    padding: 40px 28px;
+    border-radius: 4px;
+    background: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(45,74,62,0.1);
+  }
+  .menu-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 20px;
+    color: var(--green-mid);
+  }
+  .menu-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: var(--green-dark);
+  }
+  .menu-card .price {
+    font-size: 0.9rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .menu-card p {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* VISIT - Section 3 */
+  .visit-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+  }
+  .visit-image {
+    background:
+      linear-gradient(135deg, rgba(45,74,62,0.85), rgba(74,124,106,0.7)),
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><rect fill="%232d4a3e" width="600" height="600"/><circle cx="200" cy="200" r="120" fill="%233d6555" opacity="0.4"/><circle cx="450" cy="350" r="150" fill="%234a7c6a" opacity="0.25"/><circle cx="100" cy="500" r="80" fill="%233d6555" opacity="0.3"/></svg>');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .visit-image svg { width: 120px; height: 120px; opacity: 0.6; }
+  .visit-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 64px;
+    background: var(--green-dark);
+    color: var(--text-light);
+  }
+  .visit-info .section-label { color: var(--gold); text-align: left; margin-bottom: 12px; }
+  .visit-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    margin-bottom: 28px;
+    color: var(--text-light);
+  }
+  .visit-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .visit-detail svg { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; color: var(--green-light); }
+  .visit-detail .label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 4px;
+  }
+  .visit-detail .value {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.85);
+    line-height: 1.5;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 48px;
+    background: #1a2e26;
+    text-align: center;
+    font-size: 0.78rem;
+    color: rgba(245,240,232,0.4);
+    letter-spacing: 1px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 0.7rem; }
+    .menu-section { padding: 60px 24px; }
+    .visit-section { grid-template-columns: 1fr; }
+    .visit-image { min-height: 250px; }
+    .visit-info { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 14c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="#8fb5a3" stroke-width="2" stroke-linecap="round"/>
+      <path d="M4 16h24c0 6.627-5.373 12-12 12S4 22.627 4 16z" fill="#8fb5a3" opacity="0.3"/>
+      <path d="M4 16h24" stroke="#8fb5a3" stroke-width="2"/>
+      <path d="M16 4c-1 3-1 6 0 8" stroke="#8fb5a3" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M12 6c-0.5 2-0.5 4.5 0.5 6.5" stroke="#8fb5a3" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      <path d="M20 6c0.5 2 0.5 4.5-0.5 6.5" stroke="#8fb5a3" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+    </svg>
+    JADE LEAF TEA HOUSE
+  </div>
+  <div class="nav-links">
+    <a href="#menu">Menu</a>
+    <a href="#visit">Visit</a>
+  </div>
+</nav>
+
+<!-- SECTION 1: HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <svg class="hero-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 35c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="rgba(245,240,232,0.5)" stroke-width="2"/>
+      <path d="M12 40h56c0 15.464-12.536 28-28 28S12 55.464 12 40z" fill="rgba(245,240,232,0.1)" stroke="rgba(245,240,232,0.4)" stroke-width="1.5"/>
+      <path d="M40 12c-2 6-2 13 0 18" stroke="rgba(245,240,232,0.35)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M32 15c-1.5 5-1 10 1 15" stroke="rgba(245,240,232,0.25)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M48 15c1.5 5 1 10-1 15" stroke="rgba(245,240,232,0.25)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <h1>Steeped in Tradition</h1>
+    <p>Hand-selected leaves, brewed with intention</p>
+    <a href="#menu" class="hero-btn">Explore Our Teas</a>
+  </div>
+  <div class="scroll-hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="2" stroke-linecap="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </div>
+</section>
+
+<!-- SECTION 2: MENU -->
+<section class="menu-section" id="menu">
+  <div class="section-label">Our Selection</div>
+  <h2 class="section-title">The Tea Menu</h2>
+  <div class="menu-grid">
+
+    <div class="menu-card">
+      <svg class="menu-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="28" cy="30" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+        <path d="M18 28h20c0 8.284-4.477 15-10 15s-10-6.716-10-15z" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M28 12c-1 4-1 8 0 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <h3>Classic Matcha</h3>
+      <div class="price">$5.50</div>
+      <p>Ceremonial-grade matcha whisked to a smooth, vibrant froth. Served hot or iced.</p>
+    </div>
+
+    <div class="menu-card">
+      <svg class="menu-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="28" height="22" rx="4" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+        <path d="M16 24h24v14a4 4 0 01-4 4H20a4 4 0 01-4-4V24z" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M24 14c0 2 2 4 0 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+        <path d="M32 14c0 2 2 4 0 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <h3>Jasmine Pearl</h3>
+      <div class="price">$6.00</div>
+      <p>Hand-rolled green tea pearls scented with fresh jasmine blossoms. Delicate and floral.</p>
+    </div>
+
+    <div class="menu-card">
+      <svg class="menu-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="28" cy="32" rx="16" ry="12" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+        <path d="M16 28c0 0 4-6 12-6s12 6 12 6" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M28 10v8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="28" cy="32" r="3" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
+      </svg>
+      <h3>Oolong Honey</h3>
+      <div class="price">$5.75</div>
+      <p>Semi-oxidized oolong with notes of stone fruit, finished with local wildflower honey.</p>
+    </div>
+
+    <div class="menu-card">
+      <svg class="menu-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 26h28" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M14 26c0 10 6.268 18 14 18s14-8 14-18" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M22 12c0 3 3 6 0 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+        <path d="M28 10c0 3 3 6 0 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+        <path d="M34 12c0 3 3 6 0 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <h3>Chai Masala</h3>
+      <div class="price">$5.25</div>
+      <p>Bold black tea simmered with cardamom, cinnamon, ginger, and clove. Rich and warming.</p>
+    </div>
+
+    <div class="menu-card">
+      <svg class="menu-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="28" cy="28" r="16" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+        <path d="M20 24c4-2 8-2 12 0s4 8 0 10-8 2-12 0" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M28 16v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <h3>Hibiscus Rose</h3>
+      <div class="price">$5.00</div>
+      <p>Tart hibiscus petals blended with rose and a hint of citrus. Caffeine-free and refreshing.</p>
+    </div>
+
+    <div class="menu-card">
+      <svg class="menu-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 28h28c0 8.837-6.268 16-14 16s-14-7.163-14-16z" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M42 28c3 0 6 2 6 6s-3 6-6 6" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        <path d="M26 14c0 3 2 5 0 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+        <path d="M32 12c0 3 2 5 0 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <h3>Aged Pu-erh</h3>
+      <div class="price">$7.00</div>
+      <p>Earthy, fermented tea aged for complexity. Deep, smooth, and contemplative.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 3: VISIT US -->
+<section class="visit-section" id="visit">
+  <div class="visit-image">
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 55c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="rgba(245,240,232,0.4)" stroke-width="2"/>
+      <path d="M20 60h80c0 22.091-17.909 40-40 40S20 82.091 20 60z" fill="rgba(245,240,232,0.08)" stroke="rgba(245,240,232,0.3)" stroke-width="1.5"/>
+      <path d="M60 18c-3 8-3 18 0 28" stroke="rgba(245,240,232,0.2)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M48 22c-2 7-1.5 14 1.5 22" stroke="rgba(245,240,232,0.15)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M72 22c2 7 1.5 14-1.5 22" stroke="rgba(245,240,232,0.15)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="visit-info">
+    <div class="section-label">Come Find Us</div>
+    <h2>Visit Our Tea House</h2>
+
+    <div class="visit-detail">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      <div>
+        <div class="label">Address</div>
+        <div class="value">742 Blossom Lane<br>Portland, OR 97205</div>
+      </div>
+    </div>
+
+    <div class="visit-detail">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 6v6l4 2"/>
+      </svg>
+      <div>
+        <div class="label">Hours</div>
+        <div class="value">Mon — Fri: 7am – 7pm<br>Sat — Sun: 8am – 8pm</div>
+      </div>
+    </div>
+
+    <div class="visit-detail">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      <div>
+        <div class="label">Contact</div>
+        <div class="value">(503) 555-0142<br>hello@jadeleaftea.com</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Jade Leaf Tea House — All rights reserved
+</footer>
+
+</body>
+</html>
