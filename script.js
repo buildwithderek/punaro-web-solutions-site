@@ -1,3 +1,23 @@
+/* ========== MENU OVERLAY ========== */
+const menuBtn = document.getElementById('menu-btn');
+const menuOverlay = document.getElementById('menu-overlay');
+
+menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('active');
+  menuOverlay.classList.toggle('active');
+  document.body.style.overflow = menuOverlay.classList.contains('active') ? 'hidden' : '';
+});
+
+// Close menu when a link is clicked
+menuOverlay.querySelectorAll('.menu-overlay__link').forEach(link => {
+  link.addEventListener('click', () => {
+    menuBtn.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+});
+
+
 /* ========== HERO LOAD ANIMATION ========== */
 document.addEventListener('DOMContentLoaded', () => {
   // Trigger hero staggered animations

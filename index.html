@@ -15,19 +15,33 @@
   <div class="nav-inner">
     <a href="#" class="nav-brand">
       <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="28" height="28" fill="#3b82f6"/>
+        <rect width="28" height="28" fill="#3A75C4"/>
         <text x="5" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="16" fill="white">P</text>
       </svg>
       Punaro Brothers
     </a>
-    <div class="nav-links">
-      <a href="#portfolio">Portfolio</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact" class="nav-cta">Get a Free Quote</a>
-    </div>
+    <!-- Menu button -->
+    <button class="menu-btn" id="menu-btn" aria-label="Open menu">
+      <span class="menu-btn__line"></span>
+      <span class="menu-btn__line"></span>
+      <span class="menu-btn__line"></span>
+    </button>
   </div>
 </nav>
+
+<!-- Fullscreen menu overlay -->
+<div class="menu-overlay" id="menu-overlay">
+  <div class="menu-overlay__inner">
+    <div class="menu-overlay__links">
+      <a href="#about" class="menu-overlay__link" data-number="01">About Us</a>
+      <a href="#bio" class="menu-overlay__link" data-number="02">Bio</a>
+      <a href="#portfolio" class="menu-overlay__link" data-number="03">Our Work</a>
+    </div>
+    <div class="menu-overlay__footer">
+      <p>contact@punarobrothers.com</p>
+    </div>
+  </div>
+</div>
 
 <!-- ==================== SECTION 01: HERO ==================== -->
 <section class="hero">
@@ -84,13 +98,94 @@
   <div class="hero__scroll">SCROLL</div>
 </section>
 
-<!-- ==================== SECTION 02: THE PROBLEM ==================== -->
-<section class="section section--light" id="problem">
-  <div class="section__watermark"><span>BROTHERS</span></div>
+<!-- ==================== ABOUT US ==================== -->
+<section class="section section--light" id="about">
+  <div class="section__watermark"><span>ABOUT</span></div>
   <div class="section__bg-number">02</div>
 
   <div class="container">
     <div class="section__number animate-on-scroll">02</div>
+
+    <h2 class="section__heading animate-on-scroll">
+      ABOUT<br><span class="accent">US</span>
+    </h2>
+
+    <p class="problem__intro animate-on-scroll">
+      We're <strong>Punaro Brothers LLC</strong> — a small web development team that builds
+      modern, professional websites for <strong>local businesses</strong>. Restaurants, barbershops,
+      cafes, salons, and service providers who deserve to look as good online as they are in person.
+    </p>
+
+    <div class="about__values">
+      <div class="about__value animate-on-scroll delay-100">
+        <div class="about__value-number">01</div>
+        <h3 class="about__value-title">Local First</h3>
+        <p class="about__value-desc">We focus on small, local businesses — the ones that actually need a great website but don't have enterprise budgets.</p>
+      </div>
+      <div class="about__value animate-on-scroll delay-200">
+        <div class="about__value-number">02</div>
+        <h3 class="about__value-title">No Fluff</h3>
+        <p class="about__value-desc">No bloated page builders, no unnecessary complexity. We build clean, fast, custom sites from scratch.</p>
+      </div>
+      <div class="about__value animate-on-scroll delay-300">
+        <div class="about__value-number">03</div>
+        <h3 class="about__value-title">Real Support</h3>
+        <p class="about__value-desc">We don't disappear after launch. We're here to help you update, maintain, and grow your web presence.</p>
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <div class="about__quote animate-on-scroll">
+      <div class="about__quote-mark">"</div>
+      <blockquote class="about__quote-text">
+        Together, we turn ideas into reality — one clean line of <span class="accent">code</span> at a time.
+      </blockquote>
+      <p class="about__quote-attr">— PUNARO BROTHERS</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BIO ==================== -->
+<section class="section section--dark" id="bio">
+  <div class="section__watermark"><span>BROTHERS</span></div>
+  <div class="section__bg-number">03</div>
+
+  <div class="container">
+    <div class="section__number animate-on-scroll">03</div>
+
+    <h2 class="section__heading animate-on-scroll">
+      MEET THE<br><span class="accent">BROTHERS</span>
+    </h2>
+
+    <p class="bio__intro animate-on-scroll">
+      We grew up building things together. Now we build websites that
+      <strong>make a difference</strong>.
+    </p>
+
+    <div class="bio__grid">
+      <div class="bio__card animate-on-scroll delay-100">
+        <h3 class="bio__card-name">DEREK</h3>
+        <p class="bio__card-role">Frontend &amp; Design</p>
+        <p class="bio__card-desc">Crafting pixel-perfect interfaces and clean designs that users love. Obsessed with performance and modern web standards.</p>
+        <div class="bio__card-line animate-line"></div>
+      </div>
+      <div class="bio__card animate-on-scroll delay-200">
+        <h3 class="bio__card-name">BROTHER</h3>
+        <p class="bio__card-role">Backend &amp; Systems</p>
+        <p class="bio__card-desc">Building rock-solid foundations that never fail. Focused on reliability, security, and making everything run smoothly.</p>
+        <div class="bio__card-line animate-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION: THE PROBLEM ==================== -->
+<section class="section section--light" id="problem">
+  <div class="section__watermark"><span>PROBLEM</span></div>
+  <div class="section__bg-number">04</div>
+
+  <div class="container">
+    <div class="section__number animate-on-scroll">04</div>
 
     <h2 class="section__heading animate-on-scroll">
       THE<br><span class="accent">PROBLEM</span>
@@ -126,13 +221,13 @@
   </div>
 </section>
 
-<!-- ==================== SECTION 03: HOW IT WORKS ==================== -->
+<!-- ==================== SECTION 05: HOW IT WORKS ==================== -->
 <section class="section section--dark" id="process">
   <div class="process__marquee"><span>HOW IT WORKS &middot; HOW IT WORKS &middot; HOW IT WORKS &middot; HOW IT WORKS &middot;&nbsp;</span></div>
-  <div class="section__bg-number">03</div>
+  <div class="section__bg-number">05</div>
 
   <div class="container">
-    <div class="section__number animate-on-scroll">03</div>
+    <div class="section__number animate-on-scroll">05</div>
 
     <h2 class="section__heading animate-on-scroll">
       HOW IT<br><span class="accent">WORKS</span>
@@ -179,13 +274,13 @@
   </div>
 </section>
 
-<!-- ==================== SECTION 04: OUR WORK ==================== -->
+<!-- ==================== SECTION 06: OUR WORK ==================== -->
 <section class="section section--light" id="portfolio">
   <div class="section__watermark"><span>PROJECTS</span></div>
-  <div class="section__bg-number">04</div>
+  <div class="section__bg-number">06</div>
 
   <div class="container">
-    <div class="section__number animate-on-scroll">04</div>
+    <div class="section__number animate-on-scroll">06</div>
 
     <h2 class="section__heading animate-on-scroll">
       OUR<br><span class="accent">WORK</span>
@@ -251,12 +346,12 @@
   </div>
 </section>
 
-<!-- ==================== SECTION 05: PRICING ==================== -->
+<!-- ==================== SECTION 07: PRICING ==================== -->
 <section class="section section--dark" id="pricing">
-  <div class="section__bg-number">05</div>
+  <div class="section__bg-number">07</div>
 
   <div class="container">
-    <div class="section__number animate-on-scroll">05</div>
+    <div class="section__number animate-on-scroll">07</div>
 
     <h2 class="section__heading animate-on-scroll">
       SIMPLE<br><span class="accent">PRICING</span>
@@ -337,13 +432,13 @@
   </div>
 </section>
 
-<!-- ==================== SECTION 06: FAQ ==================== -->
+<!-- ==================== SECTION 08: FAQ ==================== -->
 <section class="section section--light" id="faq">
   <div class="section__watermark"><span>FAQ</span></div>
-  <div class="section__bg-number">06</div>
+  <div class="section__bg-number">08</div>
 
   <div class="container">
-    <div class="section__number animate-on-scroll">06</div>
+    <div class="section__number animate-on-scroll">08</div>
 
     <h2 class="section__heading animate-on-scroll">
       COMMON<br><span class="accent">QUESTIONS</span>
@@ -415,16 +510,16 @@
   </div>
 </section>
 
-<!-- ==================== SECTION 07: CONTACT ==================== -->
+<!-- ==================== SECTION 09: CONTACT ==================== -->
 <section class="section section--dark" id="contact">
   <!-- Rotating watermark -->
   <div class="section__watermark" style="opacity: 0.05;">
     <span style="animation: rotate-slow 100s linear infinite;">CONTACT</span>
   </div>
-  <div class="section__bg-number">07</div>
+  <div class="section__bg-number">09</div>
 
   <div class="container">
-    <div class="section__number animate-on-scroll">07</div>
+    <div class="section__number animate-on-scroll">09</div>
 
     <h2 class="section__heading animate-on-scroll">
       LET'S BUILD<br>
